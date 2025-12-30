@@ -1,16 +1,25 @@
 function App() {
-  return (
-    <>
-      <h1 style={{ textAlign: "center",color: "red", marginTop: "50px" }}>
-        Hello World 🚀
-      </h1>
-      <p style={{ textAlign: "center" }}>
+  const name = "Alok";
+  const role = "Frontend Developer";
+  const bio = "I love building clean UI using React.";
+  const skills = ["HTML", "CSS", "JavaScript", "React"];
 
-        React is working perfectly!
-      </p>
-    </>
+  return (
+    <div className="container">
+      <h1>{name}</h1>
+      <h2>{role}</h2>
+      <p>{bio}</p>
+
+      <h3>Skills</h3>
+      <ul>
+        {skills.map((skill, index) => (
+          <li key={index}>{skill}</li>
+        ))}
+      </ul>
+
+      <button>Contact Me</button>
+    </div>
   );
 }
 
 export default App;
-
