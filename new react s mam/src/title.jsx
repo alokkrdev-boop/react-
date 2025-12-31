@@ -2,9 +2,10 @@
 import "./title.css";
 
 function Title({ title, price }) {
+    let style = {backgroundColor: price > 30000 ? "yellow" : "red"};
     if (price > 30000) {
         return (
-            <div id="Title">
+            <div id="Title" style={style}>
                 <h1 id="maggie">{title}</h1>
                 <p>Price = {price}</p>
                 <h6>Discount of 5%</h6>
