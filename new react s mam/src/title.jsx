@@ -1,8 +1,11 @@
 import "./title.css";
 
-function Title() {
+function Title({title, price}) {
     return (
-        <h1 id="Title">I am the title .</h1>
+        <div id="Title">
+            <h1 id="maggie">{title}</h1>
+            <p> Price ={price}</p>
+        </div>
     )
 }
 
