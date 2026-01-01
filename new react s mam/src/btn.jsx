@@ -1,5 +1,6 @@
-function helo () {
+function helo (event) {
     console.log("hello ji")
+    console.log(event)
 }
 
 function pp () {

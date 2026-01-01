@@ -1,4 +1,5 @@
 import Btn from "./btn"
+import Form from "./form"
 
 
 
@@ -6,8 +7,11 @@ import Btn from "./btn"
 function App() {
 
   return (
-  <Btn/>
-)
+    <>
+      <Btn />
+      <Form />
+    </>
+  )
 }
 
 export default App
