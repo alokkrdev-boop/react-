@@ -1,35 +1,39 @@
-import { useState } from "react"
+import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 function Todolist() {
-    let [todos, setTodos] = useState(["sample task"])
-    let [newtodo, setNewTodo] = useState([""])
+    let [todos, setTodos] = useState([
+        { task: "sample-task", id: uuidv4() }
+    ]);
+    let [newtodo, setNewTodo] = useState("");
 
     function Addnewtask() {
-        setTodos([...todos, newtodo])
+        setTodos([...todos, { task: newtodo, id: uuidv4() }]);
+        setNewTodo("");
     }
 
     function updateNewvalue(event) {
         setNewTodo(event.target.value);
-
-
     }
+
     return (
         <div>
-            <input placeholder="add a task" value={newtodo} onChange={updateNewvalue} />
-            <button onClick={Addnewtask}> Add task</button>
+            <input
+                placeholder="add a task"
+                value={newtodo}
+                onChange={updateNewvalue}
+            />
+            <button onClick={Addnewtask}>Add task</button>
 
-            <br /><br /><br />
             <hr />
             <h4>To do list</h4>
             <ul>
-                {
-                    todos.map((todos) => {
-                        return <li>{todos}</li>
-                    })
-                }
+                {todos.map((todo) => (
+                    <li key={todo.id}>{todo.task}</li>
+                ))}
             </ul>
         </div>
-    )
+    );
 }
 
-export default Todolist
+export default Todolist;
