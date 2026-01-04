@@ -1,10 +1,10 @@
 import { useState } from "react"
 import "./lottery.css"
-import { genTicket } from "./helper.js"
+import { genTicket , sum } from "./helper.js"
 
 function Lottery() {
   let [ticket, setTicket] = useState(genTicket(3))
-
+let isWinning = sum(ticket)===15
   return (
     <div>
       <h1>Lottery</h1>
@@ -13,6 +13,7 @@ function Lottery() {
         <span>{ticket[1]}</span>
         <span>{ticket[2]}</span>
       </div>
+      <h3>{isWinning && "congratulation you have won the ticket"}</h3>
     </div>
   )
 }
