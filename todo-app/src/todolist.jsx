@@ -8,7 +8,10 @@ function Todolist() {
     let [newtodo, setNewTodo] = useState("");
 
     function Addnewtask() {
-        setTodos([...todos, { task: newtodo, id: uuidv4() }]);
+        setTodos((prevTodos) => {
+            return [...prevTodos , {task:newtodo ,id: uuidv4() }]
+
+        });
         setNewTodo("");
     }
 
