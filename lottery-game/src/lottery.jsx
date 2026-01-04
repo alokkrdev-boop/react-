@@ -4,6 +4,10 @@ import { genTicket , sum } from "./helper.js"
 
 function Lottery() {
   let [ticket, setTicket] = useState(genTicket(3))
+
+  let buyTicket =()=> {
+    setTicket(genTicket(3))
+  }
 let isWinning = sum(ticket)===15
   return (
     <div>
@@ -14,6 +18,7 @@ let isWinning = sum(ticket)===15
         <span>{ticket[2]}</span>
       </div>
       <h3>{isWinning && "congratulation you have won the ticket"}</h3>
+      <button onClick={ buyTicket}> Buy new ticket</button>
     </div>
   )
 }
